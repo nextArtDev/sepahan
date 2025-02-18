@@ -380,36 +380,36 @@ export const SliderProgress = ({ className }: { className?: string }) => {
   )
 }
 
-export const SliderSnapDisplay = ({ className }: { className?: string }) => {
-  const { selectedSnap, snapCount } = useCarouselContext()
-  const prevSnapRef = useRef(selectedSnap)
-  const [direction, setDirection] = useState<number>(0)
+// export const SliderSnapDisplay = ({ className }: { className?: string }) => {
+//   const { selectedSnap, snapCount } = useCarouselContext()
+//   const prevSnapRef = useRef(selectedSnap)
+//   const [direction, setDirection] = useState<number>(0)
 
-  useEffect(() => {
-    setDirection(selectedSnap > prevSnapRef.current ? 1 : -1)
-    prevSnapRef.current = selectedSnap
-  }, [selectedSnap])
+//   useEffect(() => {
+//     setDirection(selectedSnap > prevSnapRef.current ? 1 : -1)
+//     prevSnapRef.current = selectedSnap
+//   }, [selectedSnap])
 
-  return (
-    <div
-      className={cn(
-        'mix-blend-difference overflow-hidden flex gap-1 items-center',
-        className
-      )}
-    >
-      <motion.div
-        key={selectedSnap}
-        custom={direction}
-        initial={(d: number) => ({ y: d * 20, opacity: 0 })}
-        animate={{ y: 0, opacity: 1 }}
-        exit={(d: number) => ({ y: d * -20, opacity: 0 })}
-      >
-        {selectedSnap + 1}
-      </motion.div>
-      <span>/ {snapCount}</span>
-    </div>
-  )
-}
+//   return (
+//     <div
+//       className={cn(
+//         'mix-blend-difference overflow-hidden flex gap-1 items-center',
+//         className
+//       )}
+//     >
+//       <motion.div
+//         key={selectedSnap}
+//         custom={direction}
+//         initial={(d: number) => ({ y: d * 20, opacity: 0 })}
+//         animate={{ y: 0, opacity: 1 }}
+//         exit={(d: number) => ({ y: d * -20, opacity: 0 })}
+//       >
+//         {selectedSnap + 1}
+//       </motion.div>
+//       <span>/ {snapCount}</span>
+//     </div>
+//   )
+// }
 export const SliderDotButton = ({
   className,
   activeclass,
@@ -442,7 +442,7 @@ export const SliderDotButton = ({
                   }}
                   layoutId={`hover-${carouselId}`}
                   className={cn(
-                    'absolute z-[3] w-full h-full left-0 top-0 dark:bg-white bg-black rounded-full',
+                    'absolute z-[3] w-full h-full left-0 top-0 bg-primary rounded-full',
                     activeclass
                   )}
                 />
@@ -567,36 +567,36 @@ export const useSelectedSnapDisplay = (
   }
 }
 
-export const ThumsSlider: React.FC = () => {
-  const { emblaThumbsRef, slidesrArr, selectedIndex, onThumbClick } =
-    useCarouselContext()
-  // console.log(slidesrArr);
+// export const ThumsSlider: React.FC = () => {
+//   const { emblaThumbsRef, slidesrArr, selectedIndex, onThumbClick } =
+//     useCarouselContext()
+//   // console.log(slidesrArr);
 
-  return (
-    <div className="overflow-hidden mt-2" ref={emblaThumbsRef}>
-      <div className="flex flex-row gap-2">
-        {slidesrArr.map((slide, index) => (
-          <div
-            key={`thumb-${index}`}
-            className={`min-w-0 w-full xl:h-24 aspect-auto border-2 rounded-md ${
-              index === selectedIndex
-                ? 'opacity-100'
-                : 'border-transparent opacity-30'
-            }`}
-            style={{ flex: '0 0 15%' }}
-            onClick={() => onThumbClick(index)}
-          >
-            <motion.img
-              src={slide}
-              className="w-full h-full object-cover rounded-sm"
-              width={400}
-              height={400}
-              alt={slide.alt || `Thumbnail ${index + 1}`}
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-  )
-}
+//   return (
+//     <div className="overflow-hidden mt-2" ref={emblaThumbsRef}>
+//       <div className="flex flex-row gap-2">
+//         {slidesrArr.map((slide, index) => (
+//           <div
+//             key={`thumb-${index}`}
+//             className={`min-w-0 w-full xl:h-24 aspect-auto border-2 rounded-md ${
+//               index === selectedIndex
+//                 ? 'opacity-100'
+//                 : 'border-transparent opacity-30'
+//             }`}
+//             style={{ flex: '0 0 15%' }}
+//             onClick={() => onThumbClick(index)}
+//           >
+//             <motion.img
+//               src={slide}
+//               className="w-full h-full object-cover rounded-sm"
+//               width={400}
+//               height={400}
+//               alt={slide.alt || `Thumbnail ${index + 1}`}
+//             />
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   )
+// }
 export default Carousel

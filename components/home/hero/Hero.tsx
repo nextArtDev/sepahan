@@ -5,9 +5,9 @@ type Props = {}
 
 function Hero({}: Props) {
   return (
-    <div>
+    <section className="min-h-screen">
       <HeroCarousel />
-    </div>
+    </section>
   )
 }
 

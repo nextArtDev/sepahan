@@ -40,35 +40,53 @@ function HeroCarousel() {
   const OPTIONS: EmblaOptionsType = { loop: true }
   return (
     <>
-      <article dir="ltr">
+      <section dir="ltr">
         {/* <h1 className="text-center text-4xl font-semibold pb-4">Autoplay</h1> */}
-        <Carousel options={OPTIONS} isAutoPlay={true} className="w-4/5 mx-auto">
-          <SliderContainer className="gap-2 rounded-md h-[400px] overflow-hidden">
+        <Carousel
+          // isScale
+
+          options={OPTIONS}
+          isAutoPlay={true}
+          className="w-4/5 mx-auto relatvie"
+        >
+          <SliderContainer className="gap-2 rounded-md  ">
             {selectedNewses.map((news) => (
-              <Slider key={news.id} className="relative w-full  ">
-                <Image
-                  fill
-                  src={news.imageSrc}
-                  alt=""
-                  w-full
-                  className="object-cover "
-                />
-                <article className="rounded-t-md absolute h-1/2 bottom-0 bg-background/40 backdrop-blur-mdflex flex-col w-full p-2 z-10 text-right ">
-                  <div className="max-w-md ml-auto pr-2">
-                    <h3 className="font-semibold ">{news.title}</h3>
-                    <p className="line-clamp-3">{news.description}</p>
-                  </div>
-                </article>
+              <Slider
+                key={news.id}
+                className="w-full px-1 pt-1 bg-primary rounded-md"
+              >
+                <div className="h-[400px]">
+                  <figure className="relative w-full h-full  rounded-t-md overflow-hidden ">
+                    <Image
+                      fill
+                      src={news.imageSrc}
+                      alt=""
+                      w-full
+                      className="object-cover w-full h-full"
+                    />
+                  </figure>
+                  <article className="rounded-t-md absolute h-1/3 bottom-0  bg-background/90 backdrop-blur-md flex flex-col w-[97.5%]  text-primary text-right ">
+                    {/* <div className="max-w-md ml-auto pr-2"> */}
+                    <div className="px-6 py-3 flex flex-col gap-2">
+                      <h3 className="font-semibold text-center text-sm line-clamp-2">
+                        {news.title}
+                      </h3>
+                      <p className="text-muted-foreground line-clamp-3 text-xs">
+                        {news.description}
+                      </p>
+                    </div>
+                  </article>
+                </div>
+
                 {/* <div className="bg-red-500/30 rounded-xl h-[400px] w-full"></div> */}
-                {/* Red background with rounded corners */}
               </Slider>
             ))}
           </SliderContainer>
-          <div className="flex justify-center py-4">
-            <SliderDotButton />
+          <div className="flex justify-center py-4 ">
+            <SliderDotButton activeclass="text-primary" />
           </div>
         </Carousel>
-      </article>
+      </section>
     </>
   )
 }
