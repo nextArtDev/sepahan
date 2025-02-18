@@ -3,7 +3,8 @@ import { cn } from '@/lib/utils'
 import { HoveredLink, Menu, MenuItem, ProductItem } from './navbar-menu'
 import { useState } from 'react'
 import Image from 'next/image'
-import { MenuIcon } from 'lucide-react'
+import MenuSvg from './menu-svg'
+import SearchSvg from './search-svg'
 export function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null)
   return (
@@ -15,11 +16,11 @@ export function Navbar({ className }: { className?: string }) {
     >
       {/* mobile */}
       <Menu
-        className="relative h-10 flex sm:hidden justify-between items-center "
+        className="relative p-1 h-10 flex sm:hidden justify-between items-center "
         setActive={setActive}
       >
         <div>
-          <MenuIcon className="rounded-full" />
+          <MenuSvg isOpen={false} />
         </div>
         <div className="absolute left-1/2 -translate-x-3/4">
           <figure className="relative flex items-center justify-center p-0 w-20 h-20">
@@ -31,7 +32,9 @@ export function Navbar({ className }: { className?: string }) {
             />
           </figure>
         </div>
-        <div>3</div>
+        <div className="self-start">
+          <SearchSvg />
+        </div>
       </Menu>
 
       {/* desktop */}
