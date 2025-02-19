@@ -1,14 +1,15 @@
 import React from 'react'
 
-function SearchSvg() {
+function SearchSvg({ className }: { className?: string }) {
   return (
     <div>
       <svg
         width="26"
         height="27"
         viewBox="0 0 26 27"
-        fill="none"
+        fill="RGB(239, 212, 6)"
         xmlns="http://www.w3.org/2000/svg"
+        className={className}
       >
         {' '}
         <rect
@@ -16,7 +17,7 @@ function SearchSvg() {
           width="26"
           height="26"
           rx="13"
-          fill="white"
+          fill="RGB(239, 212, 6)"
         ></rect>{' '}
         <path
           d="M14.668 7.67383H19.668"

@@ -4,7 +4,6 @@ import Carousel, {
   Slider,
   SliderCircleDotButton,
   SliderContainer,
-  SliderDotButton,
 } from '@/components/shared/carousel/carousel'
 import { selectedNewses } from '../hero/hero-carousel'
 import { Calendar, Dot } from 'lucide-react'

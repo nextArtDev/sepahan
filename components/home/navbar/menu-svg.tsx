@@ -1,13 +1,20 @@
 import React from 'react'
 
-function MenuSvg({ isOpen = true }: { isOpen: boolean }) {
+function MenuSvg({
+  isOpen = true,
+  className,
+}: {
+  isOpen: boolean
+  className?: string
+}) {
   return (
     <svg
       width="26"
       height="27"
       viewBox="0 0 26 27"
-      fill="none"
+      fill="RGB(239, 212, 6)"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
       {isOpen ? (
         <>
@@ -39,7 +46,13 @@ function MenuSvg({ isOpen = true }: { isOpen: boolean }) {
         </>
       ) : (
         <>
-          <rect y="0.507812" width="26" height="26" rx="13" fill="white"></rect>
+          <rect
+            y="0.507812"
+            width="26"
+            height="26"
+            rx="13"
+            fill="RGB(239, 212, 6)"
+          ></rect>
           <path
             d="M13.832 17.6738C13.832 17.3056 14.1305 17.0072 14.4987 17.0072H18.1654C18.5336 17.0072 18.832 17.3056 18.832 17.6738C18.832 18.042 18.5336 18.3405 18.1654 18.3405H14.4987C14.1305 18.3405 13.832 18.042 13.832 17.6738Z"
             fill="#000039"
