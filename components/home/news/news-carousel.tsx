@@ -2,11 +2,10 @@ import React from 'react'
 import { EmblaOptionsType } from 'embla-carousel'
 import Carousel, {
   Slider,
-  SliderCircleDotButton,
   SliderContainer,
 } from '@/components/shared/carousel/carousel'
 import { selectedNewses } from '../hero/hero-carousel'
-import { Calendar, Dot } from 'lucide-react'
+import { Dot } from 'lucide-react'
 import Image from 'next/image'
 import NewsSvg from './news-svg'
 

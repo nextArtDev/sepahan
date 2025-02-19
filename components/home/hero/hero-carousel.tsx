@@ -56,7 +56,7 @@ function HeroCarousel() {
           isAutoPlay={true}
           className="w-4/5 mx-auto relatvie"
         >
-          <SliderContainer className="gap-2 rounded-md  ">
+          <SliderContainer className="gap-2 rounded-md">
             {selectedNewses.map((news) => (
               <Slider
                 key={news.id}
