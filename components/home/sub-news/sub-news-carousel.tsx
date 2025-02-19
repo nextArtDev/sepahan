@@ -20,7 +20,10 @@ function SubNewsCarousel() {
         <Carousel isAutoPlay={true} options={OPTIONS} activeSlider>
           <SliderContainer className="gap-4 !rounded-full">
             {selectedNewses.map((news) => (
-              <Slider key={news.id} className="embla__slide w-3/7 px-1 pt-1">
+              <Slider
+                key={news.id}
+                className="embla__slide max-w-[80vw] w-3/8 px-1 pt-1"
+              >
                 {/* <div className="h-[10em] pl-2 bg-primary rounded-xl"></div>{' '} */}
                 <article className="relative h-[8em] pl-2 bg-primary rounded-xl rounded-t-md ">
                   {/* <div className="max-w-md ml-auto pr-2"> */}
@@ -32,7 +35,7 @@ function SubNewsCarousel() {
 
                     <span className="flex items-center justify-start ">
                       <Dot className="size-6 text-background" />
-                      <p className="text-muted font-semibold line-clamp-1 text-xs">
+                      <p className="text-muted font-semibold line-clamp-2 text-xs">
                         {news.title}
                       </p>
                     </span>

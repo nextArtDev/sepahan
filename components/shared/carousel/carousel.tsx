@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+'use client'
 
 // https://www.ui-layouts.com/components/carousel
-'use client'
 import React, {
   ReactNode,
   createContext,

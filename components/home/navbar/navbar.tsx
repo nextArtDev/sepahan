@@ -10,13 +10,13 @@ export function Navbar({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        'fixed top-10 inset-x-0 max-w-sm md:max-w-2xl mx-auto z-50 ',
+        'fixed top-10 inset-x-0  max-w-sm md:max-w-2xl mx-auto z-50 ',
         className
       )}
     >
       {/* mobile */}
       <Menu
-        className="relative p-1 h-10 flex sm:hidden justify-between items-center "
+        className="relative bg-background/20 backdrop-blur-sm p-1 h-10 flex sm:hidden justify-between items-center "
         setActive={setActive}
       >
         <div>
