@@ -455,6 +455,51 @@ export const SliderDotButton = ({
   )
 }
 
+export const SliderCircleDotButton = ({
+  className,
+  activeclass,
+}: {
+  className?: string
+  activeclass?: string
+}) => {
+  const { selectedIndex, scrollSnaps, onDotButtonClick, carouselId }: any =
+    useCarouselContext()
+  return (
+    <div className={cn('flex', className)}>
+      <div className="flex gap-2">
+        {scrollSnaps.map((_: any, index: React.Key | null | undefined) => (
+          <button
+            type="button"
+            key={index}
+            onClick={() => onDotButtonClick(index)}
+            className={`relative inline-flex  p-0 m-0 w-3 h-3 `}
+          >
+            <div className=" bg-gray-500/40  rounded-full w-3 h-3 "></div>
+            {index === selectedIndex && (
+              <AnimatePresence mode="wait">
+                <motion.div
+                  transition={{
+                    layout: {
+                      duration: 0.4,
+                      ease: 'easeInOut',
+                      delay: 0.04,
+                    },
+                  }}
+                  layoutId={`hover-${carouselId}`}
+                  className={cn(
+                    'absolute z-[3] w-full h-full left-0 top-0 bg-primary rounded-full',
+                    activeclass
+                  )}
+                />
+              </AnimatePresence>
+            )}
+          </button>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 export const useDotButton = (
   emblaApi: EmblaCarouselType | undefined
 ): UseDotButtonType => {
