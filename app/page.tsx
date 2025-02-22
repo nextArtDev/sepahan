@@ -17,7 +17,7 @@ export default function Home() {
             '[mask-image:radial-gradient(600px_circle_at_center,yellow,transparent)]'
           )}
         />
-        <main className=" flex flex-col gap-8 row-start-2 items-center sm:items-start">
+        {/* <main className=" flex flex-col gap-8 row-start-2 items-center sm:items-start">
           <Button className="">Sepahan</Button>
           <ThemeToggle />
           <Image
@@ -111,7 +111,7 @@ export default function Home() {
             />
             Go to nextjs.org →
           </a>
-        </footer>
+        </footer> */}
       </div>
     </div>
   )

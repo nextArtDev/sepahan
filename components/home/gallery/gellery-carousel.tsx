@@ -16,7 +16,7 @@ function GalleryCarousel({}: Props) {
     <>
       <section
         dir="ltr"
-        className="w-[96%] mx-auto px-2 rounded-xl h-96 my-auto bg-primary"
+        className="w-[96%] mx-auto px-2 rounded-xl h-96 my-20 bg-primary"
       >
         <span
           dir="rtl"
@@ -29,7 +29,7 @@ function GalleryCarousel({}: Props) {
           //   isScale
           //   isAutoPlay={true}
           options={OPTIONS}
-          className="w-full mx-auto relatvie"
+          className="w-full mx-auto relative"
         >
           <SliderContainer className="gap-2 rounded-md  ">
             {selectedNewses.map((news) => (
@@ -65,7 +65,7 @@ function GalleryCarousel({}: Props) {
             ))}
           </SliderContainer>
           <div className="flex justify-center pt-6 pb-3 ">
-            <SliderCircleDotButton activeclass="bg-background" />
+            <SliderCircleDotButton activeclass="bg-primary" />
           </div>
         </Carousel>
       </section>
