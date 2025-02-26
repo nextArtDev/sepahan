@@ -5,17 +5,19 @@ import NewsCarousel from '../news/news-carousel'
 import GalleryCarousel from '../gallery/gellery-carousel'
 import MultimediaCarousel from '@/components/muli-media/multimedia-carousel'
 import TeamCarousel from '../team/team-carousel'
+import ScoreCarousel from '../score/score-gallery'
 
 type Props = {}
 
 function Hero({}: Props) {
   return (
     <section className="min-h-screen flex flex-col gap-8">
-      {/* <HeroCarousel />
+      <HeroCarousel />
       <SubNewsCarousel />
       <NewsCarousel />
+      <ScoreCarousel />
       <GalleryCarousel />
-      <MultimediaCarousel /> */}
+      <MultimediaCarousel />
       <TeamCarousel />
     </section>
   )
