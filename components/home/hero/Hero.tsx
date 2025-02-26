@@ -6,6 +6,7 @@ import GalleryCarousel from '../gallery/gellery-carousel'
 import MultimediaCarousel from '@/components/muli-media/multimedia-carousel'
 import TeamCarousel from '../team/team-carousel'
 import ScoreCarousel from '../score/score-gallery'
+import CupsCarousel from '../cups/cups-carousel'
 
 type Props = {}
 
@@ -14,6 +15,7 @@ function Hero({}: Props) {
     <section className="min-h-screen flex flex-col gap-8">
       <HeroCarousel />
       <SubNewsCarousel />
+      <CupsCarousel />
       <NewsCarousel />
       <ScoreCarousel />
       <GalleryCarousel />
